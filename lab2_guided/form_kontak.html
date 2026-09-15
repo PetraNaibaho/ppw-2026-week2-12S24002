@@ -1,0 +1,63 @@
+<form class="custom-form" action="/api/submit" method="POST">
+  <h2 class="form-title">Formulir Konsultasi Proyek Web</h2>
+  <p class="form-desc">Silakan isi formulir di bawah ini dengan data yang valid.</p>
+
+  <!-- Section 1: Data Identitas -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Data Identitas</legend>
+    
+    <div class="form-group">
+      <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
+      <input 
+        type="text" 
+        id="nama" 
+        name="nama" 
+        class="form-control" 
+        required 
+        placeholder="Contoh: Alex" 
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email Kampus (@del.ac.id) <span class="req">*</span></label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        class="form-control" 
+        required 
+        placeholder="nama@del.ac.id" 
+        aria-describedby="email-help"
+      />
+      <small id="email-help" class="form-help">Gunakan email institusi Del resmi untuk verifikasi identitas.</small>
+    </div>
+  </fieldset>
+
+  <!-- Section 2: Detail Permintaan -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Detail Permintaan</legend>
+    
+    <div class="form-group">
+      <label for="kategori" class="form-label">Topik Peminatan Matakuliah</label>
+      <select id="kategori" name="kategori" class="form-control">
+        <option value="frontend">Frontend Engineering & UI/UX</option>
+        <option value="backend">Backend & Cloud Architecture</option>
+        <option value="testing">Web Quality Assurance & Testing</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pesan" class="form-label">Deskripsi Pertanyaan / Permintaan <span class="req">*</span></label>
+      <textarea 
+        id="pesan" 
+        name="pesan" 
+        class="form-control" 
+        rows="4" 
+        required 
+        placeholder="Tuliskan detail pertanyaan atau topik konsultasi Anda di sini..."
+      ></textarea>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="btn-submit">Kirim Permintaan Konsultasi</button>
+</form>
