@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio - Petra Ignatius Pengayoman Naibaho</title>
+  <!-- Jalur CSS sudah benar -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,13 +35,13 @@
         
         <div class="hero-buttons">
           <a href="#formulir-layanan" class="btn-primary">Hire Me</a>
-          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
+          <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
         </div>
       </div>
 
       <!-- Foto Profil Utama -->
       <div class="hero-image-container">
-        <!-- DIPERBAIKI: Hapus / di depan -->
+        <!-- DIPERBAIKI: Menggunakan jalur relatif assets/Petra.jpg -->
         <img src="assets/Petra.jpg" alt="Foto Petra Ignatius Pengayoman Naibaho" class="profile-img">
       </div>
     </section>
@@ -53,10 +54,11 @@
       <span>Database Management</span>
     </div>
 
-    <!-- Section 2: Tabel Prestasi & Rincian -->
+    <!-- Section 2: Tabel Rekapitulasi & Rincian Beserta Galeri -->
     <section id="prestasi-organisasi">
       <h2>Rekapitulasi Prestasi & Pengalaman</h2>
       
+      <!-- Tabel Semantik Lengkap -->
       <table>
         <caption>Track Record Prestasi Akademik, Karya Ilmiah, dan Kepanitiaan</caption>
         <thead>
@@ -140,7 +142,7 @@
         </tfoot>
       </table>
 
-      <!-- List Detail Rincian Beserta Galeri -->
+      <!-- List Detail Rincian Beserta Galeri Terpisah -->
       <article class="detail-lists">
         <h3>Rincian Karya Ilmiah & Prestasi Utama</h3>
         <ul>
@@ -162,12 +164,12 @@
           </li>
         </ul>
 
-        <!-- 1. Galeri Sertifikat Prestasi -->
+        <!-- 1. Galeri Sertifikat Prestasi & Karya Ilmiah -->
         <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Dokumentasi Sertifikat Prestasi & Karya Ilmiah</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><em>(Klik gambar sertifikat untuk melihat ukuran penuh)</em></p>
         <div class="gallery-grid" style="margin-bottom: 2.5rem;">
+          <!-- DIPERBAIKI: Semua href dan src menggunakan jalur relatif assets/... -->
           <div class="gallery-card">
-            <!-- DIPERBAIKI: Hapus / di depan dan referensi ke folder lama -->
             <a href="assets/Sertifikat 1.jpeg" target="_blank" rel="noopener noreferrer">
               <img src="assets/Sertifikat 1.jpeg" alt="Best Visualisasi Award" class="gallery-img">
             </a>
@@ -283,16 +285,17 @@
       </article>
     </section>
 
-    <!-- Showcase Karya -->
+    <!-- Section 3: Showcase Karya -->
     <section id="portofolio-karya">
       <h2>Projects & Visual Showcase</h2>
       <p>Proyek pengembangan sistem dan aplikasi web akan segera ditambahkan di bagian ini.</p>
     </section>
 
-    <!-- Formulir Layanan Interaktif -->
+    <!-- Section 4: Formulir Layanan Interaktif (Terintegrasi ke WA) -->
     <section id="formulir-layanan">
       <h2>Hubungi Layanan / Konsultasi</h2>
-      <form action="#" method="POST">
+      <!-- DIPERBAIKI: Menambahkan ID contactForm, menghapus action/method -->
+      <form id="contactForm">
         
         <fieldset>
           <legend>Informasi Data Diri</legend>
@@ -312,7 +315,7 @@
           
           <label for="jenis-layanan">Pilih Layanan Utama:</label>
           <select id="jenis-layanan" name="jenis-layanan" required>
-            <option value="">-- Pilih Layanan --</option>
+            <option value="" disabled selected>-- Pilih Layanan --</option>
             <option value="web-dev">Web Development</option>
             <option value="research">Konsultasi Riset & Karya Tulis</option>
             <option value="database">Desain Basis Data</option>
@@ -320,19 +323,19 @@
 
           <p class="form-label-group">Kategori Proyek:</p>
           <div class="radio-group">
-            <input type="radio" id="akademik" name="kategori" value="akademik" required>
+            <input type="radio" id="akademik" name="kategori" value="Proyek Akademik" required>
             <label for="akademik">Proyek Akademik</label>
             
-            <input type="radio" id="organisasi" name="kategori" value="organisasi">
+            <input type="radio" id="organisasi" name="kategori" value="Proyek Organisasi / Umum">
             <label for="organisasi">Proyek Organisasi / Umum</label>
           </div>
 
           <p class="form-label-group">Opsi Tambahan:</p>
           <div class="checkbox-group">
-            <input type="checkbox" id="fast-track" name="opsi" value="fast-track">
+            <input type="checkbox" id="fast-track" name="opsi" value="Layanan Prioritas">
             <label for="fast-track">Layanan Prioritas</label>
             
-            <input type="checkbox" id="responsive" name="opsi" value="responsive">
+            <input type="checkbox" id="responsive" name="opsi" value="Desain Mobile Responsive">
             <label for="responsive">Desain Mobile Responsive</label>
           </div>
 
@@ -355,6 +358,56 @@
   <footer>
     <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.</p>
   </footer>
+
+  <!-- BARU: Skrip JavaScript untuk integrasi ke WhatsApp -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Mencegah formulir mengirimkan secara default
+
+      // 1. Mengambil data dari elemen formulir
+      const nama = document.getElementById('nama').value;
+      const email = document.getElementById('email').value;
+      const telepon = document.getElementById('telepon').value;
+      const layananElement = document.getElementById('jenis-layanan');
+      const layanan = layananElement.options[layananElement.selectedIndex].text;
+      const kategori = document.querySelector('input[name="kategori"]:checked').value;
+      const pesan = document.getElementById('pesan').value;
+
+      // Ambil data checkbox yang dicentang
+      const opsiArr = [];
+      const checkFastTrack = document.getElementById('fast-track');
+      const checkResponsive = document.getElementById('responsive');
+      if (checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
+      if (checkResponsive.checked) opsiArr.push(checkResponsive.value);
+      const opsi = opsiArr.length > 0 ? opsiArr.join(', ') : '-';
+
+      // 2. Membuat format teks pesan untuk WhatsApp
+      const text = 
+        "Halo Petra, saya ingin bertanya tentang layanan Anda.\n\n" +
+        "*Informasi Data Diri:*\n" +
+        "- Nama: " + nama + "\n" +
+        "- Email: " + email + "\n" +
+        "- Telepon: " + telepon + "\n\n" +
+        "*Detail Layanan:*\n" +
+        "- Layanan: " + layanan + "\n" +
+        "- Kategori: " + kategori + "\n" +
+        "- Opsi Tambahan: " + opsi + "\n\n" +
+        "*Pesan:* " + pesan;
+
+      // 3. Melakukan encoding pada teks agar aman untuk URL
+      const encodedText = encodeURIComponent(text);
+
+      // 4. Masukkan nomor WhatsApp Anda di sini (format: KodeNegaraNomorTanpaNol)
+      // GANTI nomor 628123456789 di bawah ini dengan nomor Anda sendiri
+      const myPhoneNumber = "628123456789"; 
+
+      // 5. Membuat tautan WhatsApp API
+      const waUrl = `https://wa.me/${myPhoneNumber}?text=${encodedText}`;
+
+      // 6. Membuka tautan di tab baru, pengguna tinggal klik "Kirim" di WA
+      window.open(waUrl, '_blank');
+    });
+  </script>
 
 </body>
 </html>
