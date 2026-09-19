@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio - Petra Ignatius Pengayoman Naibaho</title>
-  <!-- Jalur CSS sudah benar -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,7 +40,6 @@
 
       <!-- Foto Profil Utama -->
       <div class="hero-image-container">
-        <!-- DIPERBAIKI: Menggunakan jalur relatif assets/Petra.jpg -->
         <img src="assets/Petra.jpg" alt="Foto Petra Ignatius Pengayoman Naibaho" class="profile-img">
       </div>
     </section>
@@ -58,7 +56,6 @@
     <section id="prestasi-organisasi">
       <h2>Rekapitulasi Prestasi & Pengalaman</h2>
       
-      <!-- Tabel Semantik Lengkap -->
       <table>
         <caption>Track Record Prestasi Akademik, Karya Ilmiah, dan Kepanitiaan</caption>
         <thead>
@@ -142,7 +139,7 @@
         </tfoot>
       </table>
 
-      <!-- List Detail Rincian Beserta Galeri Terpisah -->
+      <!-- List Detail Rincian Beserta Galeri -->
       <article class="detail-lists">
         <h3>Rincian Karya Ilmiah & Prestasi Utama</h3>
         <ul>
@@ -164,11 +161,10 @@
           </li>
         </ul>
 
-        <!-- 1. Galeri Sertifikat Prestasi & Karya Ilmiah -->
+        <!-- 1. Galeri Sertifikat Prestasi -->
         <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Dokumentasi Sertifikat Prestasi & Karya Ilmiah</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><em>(Klik gambar sertifikat untuk melihat ukuran penuh)</em></p>
         <div class="gallery-grid" style="margin-bottom: 2.5rem;">
-          <!-- DIPERBAIKI: Semua href dan src menggunakan jalur relatif assets/... -->
           <div class="gallery-card">
             <a href="assets/Sertifikat 1.jpeg" target="_blank" rel="noopener noreferrer">
               <img src="assets/Sertifikat 1.jpeg" alt="Best Visualisasi Award" class="gallery-img">
@@ -291,11 +287,10 @@
       <p>Proyek pengembangan sistem dan aplikasi web akan segera ditambahkan di bagian ini.</p>
     </section>
 
-    <!-- Section 4: Formulir Layanan Interaktif (Terintegrasi ke WA) -->
+    <!-- Section 4: Formulir Layanan Interaktif (Mencegah Error 405) -->
     <section id="formulir-layanan">
       <h2>Hubungi Layanan / Konsultasi</h2>
-      <!-- DIPERBAIKI: Menambahkan ID contactForm, menghapus action/method -->
-      <form id="contactForm">
+      <form id="contactForm" action="javascript:void(0);">
         
         <fieldset>
           <legend>Informasi Data Diri</legend>
@@ -343,7 +338,8 @@
           <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan detail kebutuhan Anda di sini..." required></textarea>
         </fieldset>
 
-        <button type="submit" class="btn-primary">Kirim Pesan</button>
+        <!-- Diubah menjadi type="button" dengan fungsi onclick -->
+        <button type="button" onclick="kirimKeWA()" class="btn-primary">Kirim Pesan</button>
       </form>
     </section>
 
@@ -359,29 +355,33 @@
     <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.</p>
   </footer>
 
-  <!-- BARU: Skrip JavaScript untuk integrasi ke WhatsApp -->
+  <!-- Fungsi Javascript Langsung Membuka WA -->
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Mencegah formulir mengirimkan secara default
-
-      // 1. Mengambil data dari elemen formulir
+    function kirimKeWA() {
       const nama = document.getElementById('nama').value;
       const email = document.getElementById('email').value;
       const telepon = document.getElementById('telepon').value;
       const layananElement = document.getElementById('jenis-layanan');
-      const layanan = layananElement.options[layananElement.selectedIndex].text;
-      const kategori = document.querySelector('input[name="kategori"]:checked').value;
+      const layanan = layananElement.options[layananElement.selectedIndex] ? layananElement.options[layananElement.selectedIndex].text : '-';
+      
+      const kategoriChecked = document.querySelector('input[name="kategori"]:checked');
+      const kategori = kategoriChecked ? kategoriChecked.value : '-';
+      
       const pesan = document.getElementById('pesan').value;
 
-      // Ambil data checkbox yang dicentang
+      // Validasi input wajib
+      if (!nama || !email || !telepon || !pesan || layananElement.value === "") {
+        alert('Mohon lengkapi semua data formulir terlebih dahulu!');
+        return;
+      }
+
       const opsiArr = [];
       const checkFastTrack = document.getElementById('fast-track');
       const checkResponsive = document.getElementById('responsive');
-      if (checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
-      if (checkResponsive.checked) opsiArr.push(checkResponsive.value);
+      if (checkFastTrack && checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
+      if (checkResponsive && checkResponsive.checked) opsiArr.push(checkResponsive.value);
       const opsi = opsiArr.length > 0 ? opsiArr.join(', ') : '-';
 
-      // 2. Membuat format teks pesan untuk WhatsApp
       const text = 
         "Halo Petra, saya ingin bertanya tentang layanan Anda.\n\n" +
         "*Informasi Data Diri:*\n" +
@@ -394,19 +394,13 @@
         "- Opsi Tambahan: " + opsi + "\n\n" +
         "*Pesan:* " + pesan;
 
-      // 3. Melakukan encoding pada teks agar aman untuk URL
       const encodedText = encodeURIComponent(text);
-
-      // 4. Masukkan nomor WhatsApp Anda di sini (format: KodeNegaraNomorTanpaNol)
-      // GANTI nomor 628123456789 di bawah ini dengan nomor Anda sendiri
+      
+      // GANTI NOMOR DI BAWAH INI DENGAN NOMOR WA KAMU (misal: 6281234567890)
       const myPhoneNumber = "628123456789"; 
 
-      // 5. Membuat tautan WhatsApp API
-      const waUrl = `https://wa.me/${myPhoneNumber}?text=${encodedText}`;
-
-      // 6. Membuka tautan di tab baru, pengguna tinggal klik "Kirim" di WA
-      window.open(waUrl, '_blank');
-    });
+      window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
+    }
   </script>
 
 </body>
