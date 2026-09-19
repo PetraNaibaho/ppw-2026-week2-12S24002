@@ -34,7 +34,8 @@
         
         <div class="hero-buttons">
           <a href="#formulir-layanan" class="btn-primary">Hire Me</a>
-          <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
+          <!-- Nomor WA aktif diperbarui -->
+          <a href="https://wa.me/6285122082758" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
         </div>
       </div>
 
@@ -287,7 +288,7 @@
       <p>Proyek pengembangan sistem dan aplikasi web akan segera ditambahkan di bagian ini.</p>
     </section>
 
-    <!-- Section 4: Formulir Layanan Interaktif (Mencegah Error 405) -->
+    <!-- Section 4: Formulir Layanan Interaktif -->
     <section id="formulir-layanan">
       <h2>Hubungi Layanan / Konsultasi</h2>
       <form id="contactForm" action="javascript:void(0);">
@@ -338,7 +339,6 @@
           <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan detail kebutuhan Anda di sini..." required></textarea>
         </fieldset>
 
-        <!-- Diubah menjadi type="button" dengan fungsi onclick -->
         <button type="button" onclick="kirimKeWA()" class="btn-primary">Kirim Pesan</button>
       </form>
     </section>
@@ -355,7 +355,6 @@
     <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.</p>
   </footer>
 
-  <!-- Fungsi Javascript Langsung Membuka WA -->
   <script>
     function kirimKeWA() {
       const nama = document.getElementById('nama').value;
@@ -369,7 +368,6 @@
       
       const pesan = document.getElementById('pesan').value;
 
-      // Validasi input wajib
       if (!nama || !email || !telepon || !pesan || layananElement.value === "") {
         alert('Mohon lengkapi semua data formulir terlebih dahulu!');
         return;
@@ -396,8 +394,8 @@
 
       const encodedText = encodeURIComponent(text);
       
-      // GANTI NOMOR DI BAWAH INI DENGAN NOMOR WA KAMU (misal: 6281234567890)
-      const myPhoneNumber = "628123456789"; 
+      // Nomor WA aktif kamu
+      const myPhoneNumber = "6285122082758"; 
 
       window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
     }
