@@ -1,477 +1,256 @@
 /* ==========================================================================
-   1. UNIVERSAL RESET & VARIABLES (iPortfolio Rustic Dark Wood Theme)
+   PORTOFOLIO & PORTAL LAYANAN - PETRA IGNATIUS PENGAYOMAN NAIBAHO
+   Minggu 3: Bootstrap 5.3 CDN Custom Overrides & Advanced CSS Architecture
    ========================================================================== */
+
+/* 1. CSS Custom Properties (:root Variables Architecture) */
 :root {
-  --primary-color: #149ddd;      /* Sky Blue Accent */
-  --primary-hover: #37b3ed;      /* Hover Light Blue */
-  --sidebar-bg: #040b14;         /* Dark Navy Header & Footer */
-  --hero-wood-bg: #2b2b2b;      /* Warna Kayu Gelap (Charcoal) */
-  --bg-color: #f5f8fa;           /* Light Background */
-  --card-bg: #ffffff;            /* Card Background */
-  --text-dark: #172b4d;          /* Text Dark */
-  --text-muted: #6c757d;         /* Muted Text */
-  --border-color: #dce5ec;       /* Border Color */
-
-  --font-family: 'Open Sans', 'Segoe UI', system-ui, sans-serif;
-  --border-radius-lg: 16px;
-  --border-radius-md: 10px;
-  --border-radius-pill: 50px;
-  --box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.06);
+  --primary-brand: #0284c7;
+  --primary-hover: #0369a1;
+  --accent-gold: #f59e0b;
+  --dark-surface: #0f172a;
+  --light-bg: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted-color: #64748b;
+  --border-subtle: #e2e8f0;
+  --card-radius: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lift: 0 12px 28px -5px rgba(2, 132, 199, 0.18), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
+/* 2. Base & Typography Overrides */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-main);
+  line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   2. HEADER & NAVIGASI
-   ========================================================================== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 10%;
-  background-color: var(--sidebar-bg);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.logo h2 {
-  font-size: 1.8rem;
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #ffffff;
+  letter-spacing: -0.02em;
+  color: var(--dark-surface);
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+/* 3. Navigation Bar Styling */
+.navbar-custom {
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-smooth);
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #a8a9b4;
-  font-weight: 600;
+.navbar-brand .brand-highlight {
+  color: var(--primary-brand);
+}
+
+.nav-link {
+  font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  transition: var(--transition-smooth);
 }
 
-nav ul li a:hover {
-  color: var(--primary-color);
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-brand);
 }
 
-.btn-nav, .btn-primary {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 0.65rem 1.5rem;
-  border-radius: var(--border-radius-pill);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn-nav:hover, .btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(20, 157, 221, 0.3);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid var(--primary-color);
-  padding: 0.65rem 1.5rem;
-  border-radius: var(--border-radius-pill);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   3. HERO SECTION (Layout Rapi dengan Jarak Foto Proporsional)
-   ========================================================================== */
+/* 4. Hero Section & Profile Glow Effect */
 .hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;              /* Jarak antar kolom teks dan foto */
-  padding: 3.5rem 10%;    /* Padding atas-bawah seimbang */
-  background: linear-gradient(135deg, #2d2f33 0%, #1a1c1e 100%);
-  color: #ffffff;
-  min-height: auto;
-  border-bottom: 3px solid var(--primary-color);
-}
-
-.hero-text {
-  max-width: 580px;
+  padding: 4.5rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .badge-hello {
-  background-color: rgba(20, 157, 221, 0.2);
-  color: var(--primary-color);
-  padding: 0.3rem 0.9rem;
-  border-radius: var(--border-radius-pill);
-  font-weight: 700;
+  background: rgba(2, 132, 199, 0.1);
+  color: var(--primary-brand);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
   font-size: 0.85rem;
-  border: 1px solid var(--primary-color);
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
-.hero-text h1 {
-  font-size: 2.4rem;
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.25;
-  margin: 0.8rem 0;
-  font-weight: 700;
-  color: #ffffff;
 }
 
-.hero-text h1 span {
-  color: #ffffff;
-  border-bottom: 3px solid var(--primary-color);
-}
-
-.hero-text p {
-  color: #dce5ec;
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
-  line-height: 1.5;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.hero-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  margin-left: 2.5rem;   /* Jarak ruang napas tambahan di sebelah kiri foto */
-}
-
-.profile-img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-  border: 4px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Skills Banner Strip */
-.skills-banner {
-  background-color: var(--sidebar-bg);
-  color: #a8a9b4;
-  padding: 0.8rem 10%;
-  display: flex;
-  justify-content: space-around;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-.skills-banner span {
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   4. SECTION & TABEL DATA SEMANTIK
-   ========================================================================== */
-section {
-  padding: 3.5rem 10%;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
+.hero-title span {
+  color: var(--primary-brand);
   position: relative;
-  color: #172b4d;
-  font-weight: 700;
 }
 
-section h2::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: var(--primary-color);
-  margin-top: 8px;
+.profile-img-glow {
+  border-radius: 24px;
+  border: 4px solid var(--surface-bg, #ffffff);
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.3);
+  transition: var(--transition-smooth);
+  max-height: 380px;
+  object-fit: cover;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--card-bg);
-  border-radius: var(--border-radius-md);
+.profile-img-glow:hover {
+  transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.4);
+}
+
+/* 5. Skills Banner Strip */
+.skills-banner {
+  background: var(--dark-surface);
+  color: #f1f5f9;
+  border-radius: var(--card-radius);
+  padding: 1.25rem 2rem;
+  box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.2);
+}
+
+.skill-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.skill-pill:hover {
+  background: var(--primary-brand);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* 6. Card & Micro-Interactions */
+.project-card,
+.gallery-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  background: #ffffff;
   overflow: hidden;
-  box-shadow: var(--box-shadow);
-  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
 }
 
-caption {
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  text-align: left;
-  color: var(--text-muted);
+.project-card:hover,
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(2, 132, 199, 0.3);
 }
 
-thead {
-  background-color: var(--sidebar-bg);
+.project-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* 7. Button Styles Custom Overrides */
+.btn-primary-custom {
+  background-color: var(--primary-brand);
+  border-color: var(--primary-brand);
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus-visible {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(2, 132, 199, 0.35);
+}
+
+.btn-outline-custom {
+  border: 2px solid var(--primary-brand);
+  color: var(--primary-brand);
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.55rem 1.35rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--primary-brand);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* 8. Table Styling Overrides */
+.custom-table-container {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.table-custom {
+  margin-bottom: 0;
+}
+
+.table-custom thead {
+  background-color: var(--dark-surface);
   color: #ffffff;
 }
 
-th, td {
-  padding: 0.9rem 1.1rem;
-  text-align: left;
+.table-custom tbody tr:hover {
+  background-color: rgba(2, 132, 199, 0.04);
 }
 
-tbody tr {
-  border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.2s;
-}
-
-tbody tr:hover {
-  background-color: #f0f4f8;
-}
-
-tfoot {
-  background-color: #e2e8f0;
-  font-weight: 700;
-}
-
-.detail-lists {
-  background: var(--card-bg);
-  padding: 1.8rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow);
-}
-
-.detail-lists h3 {
-  margin-top: 0.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--sidebar-bg);
-}
-
-.detail-lists ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.detail-lists ol {
-  margin-left: 1.5rem;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
-   5. SHOWCASE GALERI KARYA & SERTIFIKAT INTERAKTIF
-   ========================================================================== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.2rem;
-}
-
-.gallery-card {
-  background-color: var(--card-bg);
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--border-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.gallery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(20, 157, 221, 0.15);
-}
-
-.gallery-card a {
-  display: block;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: #eef3f7;
-}
-
-.gallery-img {
-  width: 100%;
-  height: 190px;
-  object-fit: contain;
-  padding: 8px;
-  border-bottom: 1px solid var(--border-color);
-  transition: transform 0.4s ease;
-}
-
-.gallery-card:hover .gallery-img {
-  transform: scale(1.04);
-}
-
-.gallery-info {
-  padding: 1rem;
-  background-color: var(--card-bg);
-  flex-grow: 1;
-}
-
-.gallery-info h4 {
-  font-size: 1rem;
-  color: var(--text-dark);
-  margin-bottom: 0.2rem;
-  font-weight: 700;
-}
-
-.gallery-info p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
-   6. FORMULIR INTERAKTIF & ACCESSIBLE
-   ========================================================================== */
-form {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow);
-  display: grid;
-  gap: 1.2rem;
-}
-
-fieldset {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.2rem;
-  display: grid;
-  gap: 0.9rem;
-}
-
-legend {
-  font-weight: 700;
-  color: var(--primary-color);
-  padding: 0 0.5rem;
-}
-
-label {
+/* 9. Floating Labels & Form Modernization */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  color: var(--primary-brand);
   font-weight: 600;
-  display: block;
 }
 
-.form-label-group {
-  font-weight: 600;
-  margin-top: 0.4rem;
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 0.25rem rgba(2, 132, 199, 0.2);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: border-color 0.3s ease;
+.input-group-text {
+  background-color: #f1f5f9;
+  border-color: var(--border-subtle);
+  color: var(--primary-brand);
 }
 
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.2);
+/* 10. Modal Enhancements */
+.modal-content {
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-.radio-group, .checkbox-group {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+.modal-header {
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: #f8fafc;
 }
 
-.radio-group input, .checkbox-group input {
-  width: auto;
-  margin-right: 0.3rem;
+.modal-footer {
+  border-top: 1px solid var(--border-subtle);
 }
 
-/* ==========================================================================
-   7. FOOTER & ASIDE
-   ========================================================================== */
-aside {
-  background-color: #e7f5fb;
-  border-left: 4px solid var(--primary-color);
-  padding: 1.2rem 10%;
-  margin: 1.5rem 10%;
-  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem 10%;
-  background-color: var(--sidebar-bg);
-  color: #a8a9b4;
-  font-size: 0.88rem;
-}
-
-/* ==========================================================================
-   8. MEDIA QUERIES (Responsif Mobile < 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  nav ul {
-    gap: 1rem;
-  }
-
-  .hero-section {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .hero-image-container {
-    margin-left: 0;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .skills-banner {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-  }
+/* 11. Accessible Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary-brand);
+  outline-offset: 3px;
 }

@@ -3,402 +3,736 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio - Petra Ignatius Pengayoman Naibaho</title>
+  <title>Portofolio & Portal Layanan - Petra Ignatius Pengayoman Naibaho</title>
+
+  <!-- Google Fonts (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Overrides Stylesheet (Dimuat SETELAH Bootstrap CSS) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header & Navigasi Utama -->
+  <!-- Header & Navigasi Utama Responsif -->
   <header>
-    <div class="logo">
-      <h2>Petra.</h2>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#tentang-saya">Home</a></li>
-        <li><a href="#prestasi-organisasi">Prestasi & Pengalaman</a></li>
-        <li><a href="#portofolio-karya">Projects</a></li>
-        <li><a href="#formulir-layanan">Services</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm py-3" aria-label="Navigasi Utama">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#tentang-saya">
+          <i class="bi bi-code-slash text-primary me-2"></i>Petra<span class="brand-highlight">.Del</span>
+        </a>
+
+        <!-- Tombol Hamburger Toggle Collapse (Mobile Responsif) -->
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item"><a class="nav-link active" href="#tentang-saya"><i class="bi bi-house-door me-1"></i>Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#prestasi-organisasi"><i class="bi bi-award me-1"></i>Prestasi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portofolio-karya"><i class="bi bi-folder-symlink me-1"></i>Portofolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#formulir-layanan"><i class="bi bi-envelope me-1"></i>Layanan</a></li>
+            <li class="nav-item"><a class="nav-link text-warning fw-semibold" href="lab1_specificity.html"><i class="bi bi-cpu me-1"></i>Lab 1 Specificity</a></li>
+          </ul>
+          <div class="ms-lg-3">
+            <a href="#formulir-layanan" class="btn btn-primary-custom btn-sm"><i class="bi bi-send me-1"></i>Contact Me</a>
+          </div>
+        </div>
+      </div>
     </nav>
-    <a href="#formulir-layanan" class="btn-nav">Contact me</a>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Section 1: Hero Section (Responsive Grid 12-Kolom) -->
     <section id="tentang-saya" class="hero-section">
-      <div class="hero-text">
-        <span class="badge-hello">Hello !</span>
-        <h1>I'm <span>Petra Naibaho</span>,<br>Information Systems Student & Tech Enthusiast</h1>
-        <p>Mahasiswa Sistem Informasi yang aktif berorganisasi, meneliti tren teknologi terkini, dan berpengalaman dalam berbagai kompetisi karya tulis ilmiah nasional.</p>
-        
-        <div class="hero-buttons">
-          <a href="#formulir-layanan" class="btn-primary">Hire Me</a>
-          <!-- Nomor WA aktif 085122082758 -->
-          <a href="https://wa.me/6285122082758" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
-        </div>
-      </div>
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Text Content (7 Kolom Desktop) -->
+          <div class="col-12 col-lg-7">
+            <span class="badge-hello mb-3"><i class="bi bi-stars me-1 text-warning"></i> Hello & Welcome!</span>
+            <h1 class="hero-title mb-3">
+              Saya <span>Petra Naibaho</span>,<br>Information Systems Student & Tech Enthusiast
+            </h1>
+            <p class="lead text-secondary mb-4">
+              Mahasiswa Sistem Informasi IT Del yang aktif berorganisasi, meneliti tren teknologi terkini, dan berpengalaman dalam berbagai kompetisi karya tulis ilmiah nasional serta riset Internet of Things.
+            </p>
+            
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <a href="#formulir-layanan" class="btn btn-primary-custom">
+                <i class="bi bi-briefcase me-2"></i>Hire Me
+              </a>
+              <a href="https://wa.me/6285122082758" target="_blank" rel="noopener noreferrer" class="btn btn-outline-custom">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp Direct
+              </a>
+              <a href="lab1_specificity.html" class="btn btn-outline-dark rounded-3 px-3">
+                <i class="bi bi-journal-code me-1"></i>Uji Specificity (Lab 1)
+              </a>
+            </div>
 
-      <!-- Foto Profil Utama -->
-      <div class="hero-image-container">
-        <img src="assets/Petra.jpg" alt="Foto Petra Ignatius Pengayoman Naibaho" class="profile-img">
+            <!-- Fast Stats -->
+            <div class="row g-3 pt-2">
+              <div class="col-4">
+                <div class="border-start border-3 border-primary ps-3">
+                  <h3 class="h2 fw-bold text-dark mb-0">9+</h3>
+                  <small class="text-muted">Prestasi & Rekap</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="border-start border-3 border-warning ps-3">
+                  <h3 class="h2 fw-bold text-dark mb-0">1</h3>
+                  <small class="text-muted">Jurnal SIMASI</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="border-start border-3 border-success ps-3">
+                  <h3 class="h2 fw-bold text-dark mb-0">4+</h3>
+                  <small class="text-muted">Proyek Web/IoT</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Image (5 Kolom Desktop) -->
+          <div class="col-12 col-lg-5 text-center">
+            <div class="position-relative d-inline-block">
+              <img src="assets/Petra.jpg" alt="Foto Profil Petra Ignatius Pengayoman Naibaho" class="img-fluid profile-img-glow shadow-lg">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Skills Banner Strip -->
-    <div class="skills-banner">
-      <span>Internet of Things (IoT)</span> &bull; 
-      <span>Scientific Research</span> &bull; 
-      <span>Web Development</span> &bull; 
-      <span>Database Management</span>
+    <!-- Skills Banner Strip Responsif -->
+    <div class="container my-4">
+      <div class="skills-banner">
+        <div class="d-flex flex-wrap align-items-center justify-content-around gap-2 text-center">
+          <span class="skill-pill"><i class="bi bi-cpu me-2 text-info"></i>Internet of Things (IoT)</span>
+          <span class="skill-pill"><i class="bi bi-journal-check me-2 text-warning"></i>Scientific Research</span>
+          <span class="skill-pill"><i class="bi bi-code-slash me-2 text-success"></i>Web Development</span>
+          <span class="skill-pill"><i class="bi bi-database me-2 text-danger"></i>Database Management</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Section 2: Tabel Rekapitulasi & Rincian Beserta Galeri -->
-    <section id="prestasi-organisasi">
-      <h2>Rekapitulasi Prestasi & Pengalaman</h2>
-      
-      <table>
-        <caption>Track Record Prestasi Akademik, Karya Ilmiah, dan Kepanitiaan</caption>
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Tahun</th>
-            <th scope="col">Peran / Posisi</th>
-            <th scope="col">Nama Kegiatan / Publikasi</th>
-            <th scope="col">Penyelenggara / Penerbit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>2026</td>
-            <td>Bronze Medalist</td>
-            <td>Pekan Ilmiah Nusantara (PIN) 2 - Lomba Essay Nasional</td>
-            <td>LSPN, Faperta UMMAT & UNW Mataram</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>2026</td>
-            <td>Best Research Award</td>
-            <td>National Essay Competition (Bidang Teknologi)</td>
-            <td>Achieve Indonesia</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>2026</td>
-            <td>Best Visualisasi Award</td>
-            <td>Garuda Essay Award (Bidang Teknologi)</td>
-            <td>Achieve Indonesia</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>2026</td>
-            <td>Co-Author</td>
-            <td>Publikasi Jurnal SIMASI Vol. 6 No. 1</td>
-            <td>Universitas Bina Bangsa</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>2026</td>
-            <td>Finalis</td>
-            <td>Lombok Essay Competition (LEC) 6</td>
-            <td>RISKI & Faperta UMMAT</td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>2026</td>
-            <td>Peserta</td>
-            <td>Agricultural Technology Innovation & Creative Competition 1.0</td>
-            <td>IPB University</td>
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>2026</td>
-            <td>Peserta</td>
-            <td>National Essay Competition</td>
-            <td>PKSE Universitas Hasanuddin</td>
-          </tr>
-          <tr>
-            <th scope="row">8</th>
-            <td>2026</td>
-            <td>Documentation Division</td>
-            <td>Del Debate Championship 2026</td>
-            <td>UPT Bahasa IT Del</td>
-          </tr>
-          <tr>
-            <th scope="row">9</th>
-            <td>2025</td>
-            <td>Committee Member</td>
-            <td>2025 IT Del Pre-UTBK Tryout Event</td>
-            <td>Institut Teknologi Del</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="5">Total Track Record Tercatat: 9 Sertifikat / Pencapaian</td>
-          </tr>
-        </tfoot>
-      </table>
+    <!-- Section 2: Tabel Rekapitulasi & Galeri Dokumentasi -->
+    <section id="prestasi-organisasi" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Track Record</span>
+          <h2 class="h1 fw-bold text-dark">Rekapitulasi Prestasi & Pengalaman</h2>
+          <p class="text-secondary">Daftar pencapaian ilmiah, penghargaan esai nasional, serta kepanitiaan di Institut Teknologi Del.</p>
+        </div>
 
-      <!-- List Detail Rincian Beserta Galeri -->
-      <article class="detail-lists">
-        <h3>Rincian Karya Ilmiah & Prestasi Utama</h3>
-        <ul>
-          <li>
-            <strong>Publikasi Jurnal & Riset (2026)</strong>
-            <ol>
-              <li>Judul Penelitian: <em>"KAJIAN LITERATUR TREND PENELITIAN DI BIDANG INTERNET OF THINGS"</em>.</li>
-              <li>Penerbitan: Terdaftar pada LoA Jurnal SIMASI Vol. 6 No. 1, Universitas Bina Bangsa.</li>
-              <li>Peran: Co-Author.</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Penghargaan Esai Nasional (2026)</strong>
-            <ol>
-              <li>Meraih <em>Bronze Medal</em> pada Pekan Ilmiah Nusantara (PIN) 2.</li>
-              <li>Meraih <em>Best Research Award</em> pada National Essay Competition bidang Teknologi.</li>
-              <li>Meraih <em>Best Visualisasi Award</em> bidang Teknologi pada Garuda Essay Award.</li>
-            </ol>
-          </li>
-        </ul>
-
-        <!-- Galeri Sertifikat Prestasi -->
-        <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Dokumentasi Sertifikat Prestasi & Karya Ilmiah</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><em>(Klik gambar sertifikat untuk melihat ukuran penuh)</em></p>
-        <div class="gallery-grid" style="margin-bottom: 2.5rem;">
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 1.jpeg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 1.jpeg" alt="Best Visualisasi Award" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Best Visualisasi Award</h4>
-              <p>Garuda Essay Award 2026</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 2.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 2.jpg" alt="Publikasi Jurnal SIMASI" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Publikasi Jurnal SIMASI</h4>
-              <p>Letter of Acceptance (LoA) Co-Author</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 3.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 3.jpg" alt="Bronze Medalist" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Bronze Medalist</h4>
-              <p>Pekan Ilmiah Nusantara (PIN) 2</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 5.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 5.jpg" alt="Best Research Award" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Best Research Award</h4>
-              <p>National Essay Competition 2026</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 7.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 7.jpg" alt="Finalis LEC 6" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Finalis LEC 6</h4>
-              <p>Lombok Essay Competition 6</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 8.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 8.jpg" alt="Peserta ATICC 1.0" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Peserta ATICC 1.0</h4>
-              <p>IPB University</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 9.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 9.jpg" alt="Peserta NEC Unhas" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Peserta NEC</h4>
-              <p>Universitas Hasanuddin</p>
-            </div>
+        <!-- Tabel Responsif Bootstrap -->
+        <div class="custom-table-container mb-5">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-custom align-middle">
+              <thead>
+                <tr>
+                  <th scope="col" class="py-3 px-4">No</th>
+                  <th scope="col" class="py-3">Tahun</th>
+                  <th scope="col" class="py-3">Peran / Posisi</th>
+                  <th scope="col" class="py-3">Nama Kegiatan / Publikasi</th>
+                  <th scope="col" class="py-3 px-4">Penyelenggara / Penerbit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="px-4">1</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-warning"><i class="bi bi-trophy-fill me-1"></i>Bronze Medalist</span></td>
+                  <td>Pekan Ilmiah Nusantara (PIN) 2 - Lomba Essay Nasional</td>
+                  <td class="px-4">LSPN, Faperta UMMAT & UNW Mataram</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">2</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-success"><i class="bi bi-award-fill me-1"></i>Best Research Award</span></td>
+                  <td>National Essay Competition (Bidang Teknologi)</td>
+                  <td class="px-4">Achieve Indonesia</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">3</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-info"><i class="bi bi-star-fill me-1"></i>Best Visualisasi Award</span></td>
+                  <td>Garuda Essay Award (Bidang Teknologi)</td>
+                  <td class="px-4">Achieve Indonesia</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">4</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-dark"><i class="bi bi-journal-bookmark-fill me-1"></i>Co-Author</span></td>
+                  <td>Publikasi Jurnal SIMASI Vol. 6 No. 1</td>
+                  <td class="px-4">Universitas Bina Bangsa</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">5</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-secondary">Finalis</span></td>
+                  <td>Lombok Essay Competition (LEC) 6</td>
+                  <td class="px-4">RISKI & Faperta UMMAT</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">6</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-secondary">Peserta</span></td>
+                  <td>Agricultural Technology Innovation & Creative Competition 1.0</td>
+                  <td class="px-4">IPB University</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">7</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-secondary">Peserta</span></td>
+                  <td>National Essay Competition</td>
+                  <td class="px-4">PKSE Universitas Hasanuddin</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">8</th>
+                  <td><span class="badge bg-primary">2026</span></td>
+                  <td><span class="fw-semibold text-dark">Documentation Division</span></td>
+                  <td>Del Debate Championship 2026</td>
+                  <td class="px-4">UPT Bahasa IT Del</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-4">9</th>
+                  <td><span class="badge bg-secondary">2025</span></td>
+                  <td><span class="fw-semibold text-dark">Committee Member</span></td>
+                  <td>2025 IT Del Pre-UTBK Tryout Event</td>
+                  <td class="px-4">Institut Teknologi Del</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <h3>Rincian Pengalaman Kepanitiaan</h3>
-        <ul>
-          <li>
-            <strong>Del Debate Championship 2026 (Mei 2026)</strong>
-            <ol>
-              <li>Bertanggung jawab pada Divisi Dokumentasi.</li>
-              <li>Merekam seluruh jalannya kompetisi debat tingkat kampus UPT Bahasa IT Del.</li>
-            </ol>
-          </li>
-          <li>
-            <strong>2025 IT Del Pre-UTBK Tryout Event (April 2025)</strong>
-            <ol>
-              <li>Bertindak sebagai Anggota Panitia Pelaksana.</li>
-              <li>Mendukung kelancaran operasional simulasi UTBK.</li>
-            </ol>
-          </li>
-        </ul>
-
-        <!-- Galeri Sertifikat Kepanitiaan -->
-        <h4 style="margin-top: 1.5rem; color: var(--primary-color);">Dokumentasi Sertifikat Kepanitiaan</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><em>(Klik gambar sertifikat untuk melihat ukuran penuh)</em></p>
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 4.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 4.jpg" alt="Documentation Division" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Documentation Division</h4>
-              <p>Del Debate Championship 2026</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <a href="assets/Sertifikat 6.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="assets/Sertifikat 6.jpg" alt="Committee Member Tryout" class="gallery-img">
-            </a>
-            <div class="gallery-info">
-              <h4>Committee Member</h4>
-              <p>2025 IT Del Pre-UTBK Tryout Event</p>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Section 3: Showcase Karya -->
-    <section id="portofolio-karya">
-      <h2>Projects & Visual Showcase</h2>
-      <p>Proyek pengembangan sistem dan aplikasi web akan segera ditambahkan di bagian ini.</p>
-    </section>
-
-    <!-- Section 4: Formulir Layanan Interaktif -->
-    <section id="formulir-layanan">
-      <h2>Hubungi Layanan / Konsultasi</h2>
-      <form id="contactForm" action="javascript:void(0);">
+        <!-- Galeri Dokumen Sertifikat -->
+        <h3 class="h4 fw-bold mb-3"><i class="bi bi-images me-2 text-primary"></i>Galeri Sertifikat Prestasi & Kepanitiaan</h3>
+        <p class="text-muted small mb-4"><em>(Klik kartu gambar sertifikat untuk memperbesar dan melihat bukti dokumen)</em></p>
         
-        <fieldset>
-          <legend>Informasi Data Diri</legend>
-          
-          <label for="nama">Nama Lengkap:</label>
-          <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-
-          <label for="email">Alamat Email:</label>
-          <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-
-          <label for="telepon">Nomor Telepon / WhatsApp:</label>
-          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
-        </fieldset>
-
-        <fieldset>
-          <legend>Detail Layanan & Kebutuhan</legend>
-          
-          <label for="jenis-layanan">Pilih Layanan Utama:</label>
-          <select id="jenis-layanan" name="jenis-layanan" required>
-            <option value="" disabled selected>-- Pilih Layanan --</option>
-            <option value="web-dev">Web Development</option>
-            <option value="research">Konsultasi Riset & Karya Tulis</option>
-            <option value="database">Desain Basis Data</option>
-          </select>
-
-          <p class="form-label-group">Kategori Proyek:</p>
-          <div class="radio-group">
-            <input type="radio" id="akademik" name="kategori" value="Proyek Akademik" required>
-            <label for="akademik">Proyek Akademik</label>
-            
-            <input type="radio" id="organisasi" name="kategori" value="Proyek Organisasi / Umum">
-            <label for="organisasi">Proyek Organisasi / Umum</label>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mb-4">
+          <div class="col">
+            <div class="gallery-card h-100 p-2">
+              <a href="assets/Sertifikat 1.jpeg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Sertifikat 1.jpeg" alt="Best Visualisasi Award" class="img-fluid rounded-3 mb-2" style="height: 160px; width: 100%; object-fit: cover;">
+              </a>
+              <div class="p-2 text-center">
+                <h6 class="fw-bold mb-1">Best Visualisasi Award</h6>
+                <small class="text-muted">Garuda Essay Award 2026</small>
+              </div>
+            </div>
           </div>
 
-          <p class="form-label-group">Opsi Tambahan:</p>
-          <div class="checkbox-group">
-            <input type="checkbox" id="fast-track" name="opsi" value="Layanan Prioritas">
-            <label for="fast-track">Layanan Prioritas</label>
-            
-            <input type="checkbox" id="responsive" name="opsi" value="Desain Mobile Responsive">
-            <label for="responsive">Desain Mobile Responsive</label>
+          <div class="col">
+            <div class="gallery-card h-100 p-2">
+              <a href="assets/Sertifikat 2.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Sertifikat 2.jpg" alt="Publikasi Jurnal SIMASI" class="img-fluid rounded-3 mb-2" style="height: 160px; width: 100%; object-fit: cover;">
+              </a>
+              <div class="p-2 text-center">
+                <h6 class="fw-bold mb-1">Publikasi Jurnal SIMASI</h6>
+                <small class="text-muted">LoA Co-Author 2026</small>
+              </div>
+            </div>
           </div>
 
-          <label for="pesan">Pesan / Catatan Tambahan:</label>
-          <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan detail kebutuhan Anda di sini..." required></textarea>
-        </fieldset>
+          <div class="col">
+            <div class="gallery-card h-100 p-2">
+              <a href="assets/Sertifikat 3.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Sertifikat 3.jpg" alt="Bronze Medalist" class="img-fluid rounded-3 mb-2" style="height: 160px; width: 100%; object-fit: cover;">
+              </a>
+              <div class="p-2 text-center">
+                <h6 class="fw-bold mb-1">Bronze Medalist</h6>
+                <small class="text-muted">Pekan Ilmiah Nusantara 2</small>
+              </div>
+            </div>
+          </div>
 
-        <button type="button" onclick="kirimKeWA()" class="btn-primary">Kirim Pesan</button>
-      </form>
+          <div class="col">
+            <div class="gallery-card h-100 p-2">
+              <a href="assets/Sertifikat 5.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Sertifikat 5.jpg" alt="Best Research Award" class="img-fluid rounded-3 mb-2" style="height: 160px; width: 100%; object-fit: cover;">
+              </a>
+              <div class="p-2 text-center">
+                <h6 class="fw-bold mb-1">Best Research Award</h6>
+                <small class="text-muted">National Essay Competition</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Sidebar Informasi Tambahan -->
-    <aside>
-      <h3>Status Mahasiswa</h3>
-      <p>Aktif menempuh pendidikan Sistem Informasi di Institut Teknologi Del dan terbuka untuk kolaborasi riset serta proyek pengembangan perangkat lunak.</p>
-    </aside>
+    <!-- Section 3: Portofolio Karya (Grid 12-Kolom & Modal Dialog Interaktif) -->
+    <section id="portofolio-karya" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">Showcase Projects</span>
+          <h2 class="h1 fw-bold text-dark">Portofolio Projects & System Showcase</h2>
+          <p class="text-secondary">Proyek aplikasi web, sistem monitoring IoT, dan platform riset yang telah dikembangkan.</p>
+        </div>
+
+        <!-- Responsive Grid 12-Kolom: 1 Kolom Mobile, 2 Kolom Tablet, 4 Kolom Desktop -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          
+          <!-- Card Project 1 -->
+          <div class="col">
+            <div class="card h-100 project-card shadow-sm border-0">
+              <img src="assets/Sertifikat 1.jpeg" class="card-img-top" alt="Sistem IoT Pertanian Smart Farming">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge bg-primary">IoT & Hardware</span>
+                  <span class="badge bg-dark">ESP32</span>
+                </div>
+                <h5 class="card-title fw-bold text-dark">Smart Farming IoT Monitoring</h5>
+                <p class="card-text text-secondary small flex-grow-1">
+                  Sistem pemantauan kelembapan tanah, suhu, dan irigasi otomatis berbasis sensor ESP32 dan dashboard web real-time.
+                </p>
+                <button type="button" class="btn btn-primary-custom btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalProject1">
+                  <i class="bi bi-eye me-1"></i> Lihat Detail Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Project 2 -->
+          <div class="col">
+            <div class="card h-100 project-card shadow-sm border-0">
+              <img src="assets/Sertifikat 2.jpg" class="card-img-top" alt="Portal Riset Jurnal SIMASI">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge bg-warning text-dark">Research Portal</span>
+                  <span class="badge bg-info text-dark">PHP / MySQL</span>
+                </div>
+                <h5 class="card-title fw-bold text-dark">Portal Jurnal SIMASI</h5>
+                <p class="card-text text-secondary small flex-grow-1">
+                  Platform manajemen publikasi karya ilmiah dan kajian literatur IoT terintegrasi dengan penomoran LoA otomatis.
+                </p>
+                <button type="button" class="btn btn-primary-custom btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalProject2">
+                  <i class="bi bi-eye me-1"></i> Lihat Detail Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Project 3 -->
+          <div class="col">
+            <div class="card h-100 project-card shadow-sm border-0">
+              <img src="assets/Sertifikat 3.jpg" class="card-img-top" alt="Platform E-Learning Accessible">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge bg-success">Bootstrap 5.3</span>
+                  <span class="badge bg-secondary">Accessibility</span>
+                </div>
+                <h5 class="card-title fw-bold text-dark">Platform E-Learning Kampus</h5>
+                <p class="card-text text-secondary small flex-grow-1">
+                  Antarmuka sistem pembelajaran interaktif dengan standar aksesibilitas WCAG 2.1 AAA dan tema kontras responsif.
+                </p>
+                <button type="button" class="btn btn-primary-custom btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalProject3">
+                  <i class="bi bi-eye me-1"></i> Lihat Detail Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Project 4 -->
+          <div class="col">
+            <div class="card h-100 project-card shadow-sm border-0">
+              <img src="assets/Sertifikat 5.jpg" class="card-img-top" alt="Data Analytics Esai Nasional">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge bg-danger">Data Analytics</span>
+                  <span class="badge bg-dark">Python</span>
+                </div>
+                <h5 class="card-title fw-bold text-dark">Sistem Analytics Esai Nasional</h5>
+                <p class="card-text text-secondary small flex-grow-1">
+                  Dashboard visualisasi data analisis tren riset teknologi esai mahasiswa yang memenangkan Best Research Award 2026.
+                </p>
+                <button type="button" class="btn btn-primary-custom btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalProject4">
+                  <i class="bi bi-eye me-1"></i> Lihat Detail Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Dialog Components (Accessible & Informative) -->
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modalProject1" tabindex="-1" aria-labelledby="modalProject1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-header-title fw-bold text-dark" id="modalProject1Label">
+              <i class="bi bi-cpu text-primary me-2"></i>Smart Farming IoT Monitoring System
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/Sertifikat 1.jpeg" class="img-fluid rounded-3 mb-3 w-100" style="max-height: 300px; object-fit: cover;" alt="Banner Proyek IoT">
+            <h6 class="fw-bold text-primary mb-2">Ringkasan & Spesifikasi Proyek</h6>
+            <p>
+              Proyek ini merupakan sistem pemantauan kondisi lingkungan pertanian hidroponik berbasis sensor IoT. Menggunakan micro-controller ESP32, sensor kelembapan tanah, sensor suhu DHT22, dan actuator katup solenoid air.
+            </p>
+            <div class="row g-2 mb-3">
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Teknologi Utama:</small>
+                  <strong>C++, ESP32, MQTT Protocol, Bootstrap 5</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Fitur Utama:</small>
+                  <strong>Real-time Telemetry, Auto Irrigation, Alert System</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+            <a href="https://wa.me/6285122082758" target="_blank" class="btn btn-primary-custom btn-sm">Konsultasikan Proyek ini</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modalProject2" tabindex="-1" aria-labelledby="modalProject2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-header-title fw-bold text-dark" id="modalProject2Label">
+              <i class="bi bi-journal-check text-primary me-2"></i>Portal Publikasi Riset SIMASI Vol. 6
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/Sertifikat 2.jpg" class="img-fluid rounded-3 mb-3 w-100" style="max-height: 300px; object-fit: cover;" alt="Banner Proyek SIMASI">
+            <h6 class="fw-bold text-primary mb-2">Publikasi Riset & Kajian Literatur IoT</h6>
+            <p>
+              Riset bereputasi terdaftar pada Letter of Acceptance (LoA) Jurnal SIMASI Universitas Bina Bangsa Vol. 6 No. 1 2026. Berfokus pada pemetaan taksonomi arsitektur Internet of Things dan tantangan keamanan jaringan sensor nirkabel.
+            </p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Status: Published / Accepted Co-Author</li>
+              <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Index: Jurnal Ilmiah Sistem Informasi</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+            <a href="assets/Sertifikat 2.jpg" target="_blank" class="btn btn-primary-custom btn-sm">Buka Sertifikat LoA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modalProject3" tabindex="-1" aria-labelledby="modalProject3Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-header-title fw-bold text-dark" id="modalProject3Label">
+              <i class="bi bi-laptop text-primary me-2"></i>Platform E-Learning Kampus Accessible
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/Sertifikat 3.jpg" class="img-fluid rounded-3 mb-3 w-100" style="max-height: 300px; object-fit: cover;" alt="Banner Proyek E-Learning">
+            <h6 class="fw-bold text-primary mb-2">Desain HTML5 & Modern CSS Accessibility</h6>
+            <p>
+              Antarmuka portal akademis berbasis komponen Bootstrap 5.3 yang mengutamakan rasio kontras warna AA/AAA, struktur navigasi keyboard, serta responsive grid multi-breakpoint.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="modalProject4" tabindex="-1" aria-labelledby="modalProject4Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-header-title fw-bold text-dark" id="modalProject4Label">
+              <i class="bi bi-bar-chart-line text-primary me-2"></i>Analytics Esai Teknologi Nasional
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/Sertifikat 5.jpg" class="img-fluid rounded-3 mb-3 w-100" style="max-height: 300px; object-fit: cover;" alt="Banner Analytics Esai">
+            <h6 class="fw-bold text-primary mb-2">Pemenang Best Research Award 2026</h6>
+            <p>
+              Pengolahan data visualisasi tren riset esai teknologi berbasis Python, Pandas, dan Chart.js yang berhasil membawa penghargaan riset terbaik tingkat nasional.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Modernisasi Formulir Layanan (Floating Labels & Input Groups & Validation) -->
+    <section id="formulir-layanan" class="py-5 bg-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            
+            <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5">
+              <div class="text-center mb-4">
+                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Formulir Konsultasi</span>
+                <h2 class="h2 fw-bold text-dark">Hubungi Layanan / Konsultasi Interactive</h2>
+                <p class="text-muted">Isi formulir berikut untuk berdiskusi mengenai proyek riset, pengembangan web, atau konsultasi IoT.</p>
+              </div>
+
+              <!-- Form dengan validasi visual Bootstrap 5 (.needs-validation) -->
+              <form id="contactForm" class="needs-validation" novalidate action="javascript:void(0);">
+                
+                <!-- Fieldset 1: Data Diri -->
+                <fieldset class="mb-4">
+                  <legend class="h6 fw-bold text-primary mb-3 border-bottom pb-2">
+                    <i class="bi bi-person-lines-fill me-2"></i>1. Informasi Data Diri
+                  </legend>
+
+                  <div class="row g-3">
+                    <!-- Input Nama dengan Floating Labels & Input Group Icon -->
+                    <div class="col-md-6">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <div class="form-floating flex-grow-1">
+                          <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" required>
+                          <label for="nama">Nama Lengkap *</label>
+                          <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
+                          <div class="valid-feedback">Nama valid!</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Input Email dengan Floating Labels -->
+                    <div class="col-md-6">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <div class="form-floating flex-grow-1">
+                          <input type="email" class="form-control" id="email" placeholder="nama@del.ac.id" required>
+                          <label for="email">Alamat Email Resmi *</label>
+                          <div class="invalid-feedback">Alamat email valid wajib disertakan.</div>
+                          <div class="valid-feedback">Email valid!</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Input Telepon / WhatsApp -->
+                    <div class="col-12">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
+                        <div class="form-floating flex-grow-1">
+                          <input type="tel" class="form-control" id="telepon" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,14}" required>
+                          <label for="telepon">Nomor Telepon / WhatsApp (10-14 digit) *</label>
+                          <div class="invalid-feedback">Nomor WhatsApp valid wajib diisi (contoh: 085122082758).</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- Fieldset 2: Detail Layanan -->
+                <fieldset class="mb-4">
+                  <legend class="h6 fw-bold text-primary mb-3 border-bottom pb-2">
+                    <i class="bi bi-gear-wide-connected me-2"></i>2. Detail Layanan & Spesifikasi
+                  </legend>
+
+                  <div class="row g-3">
+                    <!-- Dropdown Select Layanan Utama -->
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <select class="form-select" id="jenisLayanan" aria-label="Pilih Layanan Utama" required>
+                          <option value="" disabled selected>-- Pilih Layanan --</option>
+                          <option value="web-dev">Web Development (Bootstrap 5 / Modern CSS)</option>
+                          <option value="research">Konsultasi Riset & Karya Tulis Ilmiah</option>
+                          <option value="iot-design">Perancangan Sistem IoT & Hardware</option>
+                          <option value="database">Desain & Manajeman Basis Data</option>
+                        </select>
+                        <label for="jenisLayanan">Pilih Layanan Utama *</label>
+                        <div class="invalid-feedback">Silakan pilih salah satu jenis layanan.</div>
+                      </div>
+                    </div>
+
+                    <!-- Radio Group Kategori Proyek -->
+                    <div class="col-md-6">
+                      <label class="form-label fw-semibold text-dark mb-2">Kategori Proyek:</label>
+                      <div class="d-flex gap-3 pt-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="kategoriProyek" id="akademik" value="Proyek Akademik" checked>
+                          <label class="form-check-label" for="akademik">Akademik</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="kategoriProyek" id="organisasi" value="Proyek Organisasi / Umum">
+                          <label class="form-check-label" for="organisasi">Organisasi / Umum</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Checkbox Opsi Tambahan -->
+                    <div class="col-12">
+                      <label class="form-label fw-semibold text-dark mb-2">Opsi Tambahan (Opsional):</label>
+                      <div class="d-flex flex-wrap gap-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="fastTrack" value="Layanan Prioritas (Fast-Track)">
+                          <label class="form-check-label" for="fastTrack">Layanan Prioritas (Fast-Track)</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="responsiveDesign" value="Desain Mobile Responsive & Accessible" checked>
+                          <label class="form-check-label" for="responsiveDesign">Mobile Responsive & Accessible</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Textarea Pesan dengan Floating Labels -->
+                    <div class="col-12">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+                        <div class="form-floating flex-grow-1">
+                          <textarea class="form-control" id="pesan" placeholder="Tuliskan pesan..." style="height: 120px;" required></textarea>
+                          <label for="pesan">Pesan / Detail Kebutuhan Anda *</label>
+                          <div class="invalid-feedback">Pesan detail kebutuhan wajib diisi.</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Checkbox Persetujuan Syarat & Ketentuan -->
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="syaratKetentuan" required>
+                        <label class="form-check-label small text-secondary" for="syaratKetentuan">
+                          Saya menyetujui bahwa data yang diisikan akan dikirimkan langsung ke nomor WhatsApp resmi Petra Naibaho. *
+                        </label>
+                        <div class="invalid-feedback">Anda wajib menyetujui syarat & ketentuan sebelum mengirim.</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </fieldset>
+
+                <!-- Tombol Submit Form -->
+                <div class="text-center pt-2">
+                  <button type="submit" class="btn btn-primary-custom btn-lg w-100 py-3">
+                    <i class="bi bi-whatsapp me-2"></i>Kirim Pesan via WhatsApp Interaktif
+                  </button>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar Info Status Mahasiswa -->
+    <div class="container mb-5">
+      <div class="card border-0 shadow-sm bg-dark text-white rounded-4 p-4">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4 class="h5 fw-bold text-warning mb-1"><i class="bi bi-info-circle me-2"></i>Status Mahasiswa & Ketersediaan Kolaborasi</h4>
+            <p class="mb-0 text-white-50 small">
+              Petra Ignatius Pengayoman Naibaho (NIM: 12S24002) — Aktif menempuh studi S1 Sistem Informasi di Institut Teknologi Del. Terbuka untuk kolaborasi riset ilmiah, lomba karya tulis esai, serta proyek rekayasa perangkat lunak web.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <a href="https://wa.me/6285122082758" target="_blank" class="btn btn-warning btn-sm fw-bold">Hubungi via WA</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.</p>
+  <!-- Footer Responsif -->
+  <footer class="bg-dark text-white py-4 border-top border-secondary">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <span class="fw-bold text-primary">Petra.Del</span> &copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#tentang-saya" class="text-white-50 text-decoration-none mx-2 small">Home</a>
+          <a href="#prestasi-organisasi" class="text-white-50 text-decoration-none mx-2 small">Prestasi</a>
+          <a href="#portofolio-karya" class="text-white-50 text-decoration-none mx-2 small">Projects</a>
+          <a href="lab1_specificity.html" class="text-warning text-decoration-none mx-2 small">Lab 1 Demo</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <!-- Bootstrap 5.3.3 JS Bundle CDN (Termasuk Popper.js untuk Navbar Collapse & Modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- JavaScript Form Handler dengan Bootstrap Visual Validation State -->
   <script>
-    function kirimKeWA() {
-      const nama = document.getElementById('nama').value;
-      const email = document.getElementById('email').value;
-      const telepon = document.getElementById('telepon').value;
-      const layananElement = document.getElementById('jenis-layanan');
-      const layanan = layananElement.options[layananElement.selectedIndex] ? layananElement.options[layananElement.selectedIndex].text : '-';
-      
-      const kategoriChecked = document.querySelector('input[name="kategori"]:checked');
-      const kategori = kategoriChecked ? kategoriChecked.value : '-';
-      
-      const pesan = document.getElementById('pesan').value;
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
 
-      if (!nama || !email || !telepon || !pesan || layananElement.value === "") {
-        alert('Mohon lengkapi semua data formulir terlebih dahulu!');
-        return;
-      }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-      const opsiArr = [];
-      const checkFastTrack = document.getElementById('fast-track');
-      const checkResponsive = document.getElementById('responsive');
-      if (checkFastTrack && checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
-      if (checkResponsive && checkResponsive.checked) opsiArr.push(checkResponsive.value);
-      const opsi = opsiArr.length > 0 ? opsiArr.join(', ') : '-';
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
 
-      const text = 
-        "Halo Petra, saya ingin bertanya tentang layanan Anda.\n\n" +
-        "*Informasi Data Diri:*\n" +
-        "- Nama: " + nama + "\n" +
-        "- Email: " + email + "\n" +
-        "- Telepon: " + telepon + "\n\n" +
-        "*Detail Layanan:*\n" +
-        "- Layanan: " + layanan + "\n" +
-        "- Kategori: " + kategori + "\n" +
-        "- Opsi Tambahan: " + opsi + "\n\n" +
-        "*Pesan:* " + pesan;
+        form.classList.add('was-validated');
 
-      const encodedText = encodeURIComponent(text);
-      
-      // Nomor WhatsApp aktif kamu
-      const myPhoneNumber = "6285122082758"; 
+        // Ambil Data Form
+        const nama = document.getElementById('nama').value;
+        const email = document.getElementById('email').value;
+        const telepon = document.getElementById('telepon').value;
+        
+        const layananSelect = document.getElementById('jenisLayanan');
+        const layananText = layananSelect.options[layananSelect.selectedIndex] ? layananSelect.options[layananSelect.selectedIndex].text : '-';
+        
+        const kategoriChecked = document.querySelector('input[name="kategoriProyek"]:checked');
+        const kategoriText = kategoriChecked ? kategoriChecked.value : '-';
+        
+        const pesanText = document.getElementById('pesan').value;
 
-      window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
-    }
+        // Opsi tambahan
+        const opsiArr = [];
+        const checkFastTrack = document.getElementById('fastTrack');
+        const checkResponsive = document.getElementById('responsiveDesign');
+        if (checkFastTrack && checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
+        if (checkResponsive && checkResponsive.checked) opsiArr.push(checkResponsive.value);
+        const opsiText = opsiArr.length > 0 ? opsiArr.join(', ') : '-';
+
+        // Format Pesan WhatsApp
+        const textPayload = 
+          "Halo Petra Naibaho, saya berminat mengajukan konsultasi/layanan via web portofolio Anda:\n\n" +
+          "*1. Data Diri Pemohon:*\n" +
+          "• Nama Lengkap: " + nama + "\n" +
+          "• Email: " + email + "\n" +
+          "• No. WhatsApp: " + telepon + "\n\n" +
+          "*2. Detail Layanan:*\n" +
+          "• Layanan Utama: " + layananText + "\n" +
+          "• Kategori: " + kategoriText + "\n" +
+          "• Opsi Tambahan: " + opsiText + "\n\n" +
+          "*3. Pesan / Kebutuhan:*\n" + pesanText;
+
+        const encodedPayload = encodeURIComponent(textPayload);
+        const myPhoneNumber = "6285122082758";
+
+        // Buka Tautan WhatsApp
+        window.open(`https://wa.me/${myPhoneNumber}?text=${encodedPayload}`, '_blank');
+      });
+    });
   </script>
 
 </body>
