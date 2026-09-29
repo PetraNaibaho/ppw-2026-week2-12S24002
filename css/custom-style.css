@@ -1,0 +1,542 @@
+/* ==========================================================================
+   1. UNIVERSAL RESET & VARIABLES (iPortfolio Rustic Dark Wood Theme)
+   ========================================================================== */
+:root {
+  --primary-color: #149ddd;      /* Sky Blue Accent */
+  --primary-hover: #37b3ed;      /* Hover Light Blue */
+  --sidebar-bg: #040b14;         /* Dark Navy Header & Footer */
+  --hero-wood-bg: #2b2b2b;      /* Warna Kayu Gelap (Charcoal) */
+  --bg-color: #f5f8fa;           /* Light Background */
+  --card-bg: #ffffff;            /* Card Background */
+  --text-dark: #172b4d;          /* Text Dark */
+  --text-muted: #6c757d;         /* Muted Text */
+  --border-color: #dce5ec;       /* Border Color */
+
+  --font-family: 'Open Sans', 'Segoe UI', system-ui, sans-serif;
+  --border-radius-lg: 16px;
+  --border-radius-md: 10px;
+  --border-radius-pill: 50px;
+  --box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGASI
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  background-color: var(--sidebar-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-bottom: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #a8a9b4;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.btn-nav, .btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-nav:hover, .btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 157, 221, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid var(--primary-color);
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3.5rem 10%;
+  background: linear-gradient(135deg, #2d2f33 0%, #1a1c1e 100%);
+  color: #ffffff;
+  min-height: auto;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.hero-text {
+  max-width: 580px;
+}
+
+.badge-hello {
+  background-color: rgba(20, 157, 221, 0.2);
+  color: var(--primary-color);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid var(--primary-color);
+  display: inline-block;
+}
+
+.hero-text h1 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin: 0.8rem 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero-text h1 span {
+  color: #ffffff;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.hero-text p {
+  color: #dce5ec;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 2.5rem;
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  border: 4px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Skills Banner Strip */
+.skills-banner {
+  background-color: var(--sidebar-bg);
+  color: #a8a9b4;
+  padding: 0.8rem 10%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.skills-banner span {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   4. SECTIONS & TABLES
+   ========================================================================== */
+section {
+  padding: 3.5rem 10%;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  color: #172b4d;
+  font-weight: 700;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin-top: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+caption {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-align: left;
+  color: var(--text-muted);
+}
+
+thead {
+  background-color: var(--sidebar-bg);
+  color: #ffffff;
+}
+
+th, td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background-color: #f0f4f8;
+}
+
+tfoot {
+  background-color: #e2e8f0;
+  font-weight: 700;
+}
+
+.detail-lists {
+  background: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+}
+
+.detail-lists h3 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--sidebar-bg);
+}
+
+.detail-lists ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.detail-lists ol {
+  margin-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. GALLERY & CARDS
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.gallery-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(20, 157, 221, 0.15);
+}
+
+.gallery-card a {
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #eef3f7;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+.gallery-info {
+  padding: 1rem;
+  background-color: var(--card-bg);
+  flex-grow: 1;
+}
+
+.gallery-info h4 {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.gallery-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. DYNAMIC CSR & SKELETON LOADING ANIMATIONS (UI States)
+   ========================================================================== */
+.skeleton-card {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+}
+
+.skeleton-line {
+  height: 14px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.card-project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.card-project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(20, 157, 221, 0.2) !important;
+}
+
+.project-thumbnail {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-project:hover .project-thumbnail {
+  transform: scale(1.05);
+}
+
+/* Service Card Styling */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius-md);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Filter Button Styling */
+.filter-btn {
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   7. FORMULIR & ASIDE
+   ========================================================================== */
+form {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  gap: 1.2rem;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+legend {
+  font-weight: 700;
+  color: var(--primary-color);
+  padding: 0 0.5rem;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+}
+
+.form-label-group {
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.2);
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.radio-group input, .checkbox-group input {
+  width: auto;
+  margin-right: 0.3rem;
+}
+
+aside {
+  background-color: #e7f5fb;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.2rem 10%;
+  margin: 1.5rem 10%;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 10%;
+  background-color: var(--sidebar-bg);
+  color: #a8a9b4;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero-image-container {
+    margin-left: 0;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .skills-banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

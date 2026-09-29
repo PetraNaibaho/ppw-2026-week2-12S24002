@@ -1,0 +1,29 @@
+{
+  "developer": {
+    "name": "Petra Ignatius Pengayoman Naibaho",
+    "nim": "12S24002",
+    "programStudy": "Sarjana Sistem Informasi",
+    "institution": "Institut Teknologi Del",
+    "academicYear": "2025/2026",
+    "role": "Information Systems Student & Tech Enthusiast",
+    "bio": "Mahasiswa Sistem Informasi yang aktif berorganisasi, meneliti tren teknologi terkini, dan berpengalaman dalam berbagai kompetisi karya tulis ilmiah nasional.",
+    "contact": {
+      "email": "petranaibaho@example.com",
+      "phone": "085122082758",
+      "whatsapp": "https://wa.me/6285122082758",
+      "github": "https://github.com/PetraNaibaho"
+    },
+    "skills": [
+      "Internet of Things (IoT)",
+      "Scientific Research",
+      "Web Development (CSR/Bootstrap 5)",
+      "Database Management & Optimization"
+    ],
+    "statistics": {
+      "totalCertificates": 9,
+      "totalPublications": 1,
+      "nationalAwards": 3,
+      "completedProjects": 4
+    }
+  }
+}

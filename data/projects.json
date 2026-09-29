@@ -1,0 +1,54 @@
+[
+  {
+    "id": "proj-1",
+    "title": "IoT Environmental & Air Quality Monitoring System",
+    "category": "Internet of Things",
+    "thumbnail": "assets/Sertifikat 1.jpeg",
+    "description": "Perancangan dan pengujian sistem pemantauan kualitas udara & parameter lingkungan berbasis IoT secara real-time. Sistem menggunakan sensor multi-gas dan modul mikrokontroler yang terhubung secara terenkripsi ke dashboard web.",
+    "metrics": "99.2% Uptime, 500+ Telemetry Points/min",
+    "tags": ["IoT", "Sensors", "REST API", "Telemetry"],
+    "details": "Solusi IoT ini memadukan sensor kualitas udara MQ-135, sensor suhu/kelembaban DHT22, serta mikrokontroler ESP32. Data dikirimkan secara asinkron menggunakan format payload JSON ke RESTful API backend dan dirakit di antarmuka web interaktif.",
+    "date": "Januari 2026",
+    "award": "Best Visualisasi Award - Garuda Essay Award 2026",
+    "link": "#"
+  },
+  {
+    "id": "proj-2",
+    "title": "Kajian Literatur Trend Penelitian Internet of Things (SIMASI)",
+    "category": "Scientific Research",
+    "thumbnail": "assets/Sertifikat 2.jpg",
+    "description": "Publikasi ilmiah mengenai pemetaan komprehensif tren riset Internet of Things global. Menganalisis ratusan artikel terindeks untuk mengidentifikasi arsitektur edge computing dan keamanan protokol IoT.",
+    "metrics": "LoA Vol. 6 No. 1, Universitas Bina Bangsa",
+    "tags": ["Research", "IoT", "Literature Review", "SIMASI Journal"],
+    "details": "Riset ini diterbitkan pada Jurnal SIMASI dengan status Co-Author. Metodologi Tinjauan Literatur Sistematis (SLR) digunakan untuk mengklasifikasikan evolusi arsitektur web & IoT dari era Monolitik menuju Decoupled Microservices.",
+    "date": "Februari 2026",
+    "award": "Letter of Acceptance (LoA) Jurnal SIMASI 2026",
+    "link": "#"
+  },
+  {
+    "id": "proj-3",
+    "title": "Smart Agriculture & Plant Health Assistant",
+    "category": "Web Development",
+    "thumbnail": "assets/Sertifikat 3.jpg",
+    "description": "Aplikasi web interaktif berbasis Client-Side Rendering (CSR) untuk pemantauan kesehatan tanaman pertanian dan rekomendasi pemupukan berbasis data cuaca & kondisi tanah.",
+    "metrics": "Bronze Medalist PIN 2, Response Time < 120ms",
+    "tags": ["Web Dev", "CSR", "Bootstrap 5", "JavaScript ES6+"],
+    "details": "Platform web CSR ini menyajikan antarmuka reaktif tanpa memicu full page reload. Menggunakan Fetch API asinkron untuk mengambil telemetry tanah dan merender visual kartu produk serta modal informasi secara dinamis.",
+    "date": "Januari 2026",
+    "award": "Bronze Medalist - Pekan Ilmiah Nusantara (PIN) 2",
+    "link": "#"
+  },
+  {
+    "id": "proj-4",
+    "title": "Database Management & Academic Analytics Portal",
+    "category": "Database Management",
+    "thumbnail": "assets/Sertifikat 5.jpg",
+    "description": "Pengembangan skema basis data relasional terstruktur dan portal analitik performa akademik mahasiswa. Dilengkapi query SQL teroptimasi dan rest-based mock data provider.",
+    "metrics": "Best Research Award NEC 2026, 3NF Normalized Schema",
+    "tags": ["SQL", "Database Design", "Analytics", "JSON Provider"],
+    "details": "Proyek ini membedah penyimpanan data dari struktur monolitik menjadi decoupled data layer (profile.json, projects.json, services.json), memungkinkan integrasi data yang fleksibel dan independensi antara lapisan presentation dan data layer.",
+    "date": "Februari 2026",
+    "award": "Best Research Award - National Essay Competition 2026",
+    "link": "#"
+  }
+]

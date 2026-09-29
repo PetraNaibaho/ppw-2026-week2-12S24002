@@ -1,0 +1,53 @@
+[
+  {
+    "id": "web-dev",
+    "title": "Web Development & Frontend CSR",
+    "category": "Web Development",
+    "price": "Rp 1.500.000 / Proyek",
+    "badge": "Terpopuler",
+    "popular": true,
+    "description": "Pengembangan aplikasi web kontemporer dengan arsitektur Decoupled Single Page Application / Client-Side Rendering (CSR), responsif Bootstrap 5, dan terintegrasi REST API.",
+    "features": [
+      "Desain Responsif Bootstrap 5 & Custom CSS",
+      "Decoupled JSON Data Layer Integration",
+      "Dynamic CSR & 4 UI States Management",
+      "Universal Dynamic Modal System",
+      "Optimasi Performa & DevTools Profiling"
+    ],
+    "estimatedTime": "5 - 7 Hari Kerja"
+  },
+  {
+    "id": "research",
+    "title": "Konsultasi Riset & Karya Tulis Ilmiah",
+    "category": "Research & Publication",
+    "price": "Rp 850.000 / Sesi",
+    "badge": "Akademik",
+    "popular": false,
+    "description": "Bimbingan dan penyusunan esai ilmiah nasional, tinjauan literatur sistematis (SLR), serta pendampingan draft publikasi jurnal bereputasi.",
+    "features": [
+      "Analisis Tren Riset & Pemetaan Topik",
+      "Metodologi Systematic Literature Review (SLR)",
+      "Penyusunan Visualisasi Data & Infografis",
+      "Proofreading & Pemeriksaan Plagiarisme",
+      "Panduan Submission Jurnal SIMASI/PIN"
+    ],
+    "estimatedTime": "3 - 5 Hari Kerja"
+  },
+  {
+    "id": "database",
+    "title": "Desain Basis Data & Optimization",
+    "category": "Database Management",
+    "price": "Rp 1.200.000 / Skema",
+    "badge": "Teknis",
+    "popular": false,
+    "description": "Perancangan skema basis data relasional terstruktur (1NF - 3NF), perancangan indeks query, serta pembuatan mock RESTful JSON data provider.",
+    "features": [
+      "Model Data Konseptual & Logikal (C4/ERD)",
+      "Normalisasi Skema Data hingga 3NF",
+      "Optimasi Indexing & Formulasi Query SQL",
+      "Integrasi Mock RESTful JSON Provider",
+      "Dokumentasi Arsitektur Data Lengkap"
+    ],
+    "estimatedTime": "4 - 6 Hari Kerja"
+  }
+]

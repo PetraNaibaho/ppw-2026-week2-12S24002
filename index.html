@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio - Petra Ignatius Pengayoman Naibaho</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Portofolio - Petra Ignatius Pengayoman Naibaho (Decoupled CSR)</title>
+  <!-- Content Security Policy (CSP) Lapis Pertama Keamanan Sisi Klien -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';">
+  
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Styles Week 4 (Modular) -->
+  <link rel="stylesheet" href="css/custom-style.css">
 </head>
 <body>
 
   <!-- Header & Navigasi Utama -->
   <header>
-    <div class="logo">
-      <h2>Petra.</h2>
+    <div class="logo d-flex align-items-center gap-2">
+      <h2 class="mb-0">Petra.</h2>
+      <span class="badge bg-primary text-uppercase px-2 py-1 fs-6">CSR Edition</span>
     </div>
     <nav>
       <ul>
         <li><a href="#tentang-saya">Home</a></li>
         <li><a href="#prestasi-organisasi">Prestasi & Pengalaman</a></li>
         <li><a href="#portofolio-karya">Projects</a></li>
-        <li><a href="#formulir-layanan">Services</a></li>
+        <li><a href="#layanan-katalog">Services</a></li>
+        <li><a href="#formulir-layanan">Contact</a></li>
       </ul>
     </nav>
-    <a href="#formulir-layanan" class="btn-nav">Contact me</a>
+    <div class="d-flex align-items-center">
+      <!-- Reactive Badge UI State dari localStorage -->
+      <span id="orderHistoryBadge" class="badge bg-warning text-dark me-3 rounded-pill px-3 py-2 fw-bold d-none shadow-sm">
+        <i class="bi bi-clock-history me-1"></i> 0 Pesanan Tersimpan
+      </span>
+      <a href="#formulir-layanan" class="btn-nav">Contact me</a>
+    </div>
   </header>
 
   <main>
@@ -30,12 +47,13 @@
       <div class="hero-text">
         <span class="badge-hello">Hello !</span>
         <h1>I'm <span>Petra Naibaho</span>,<br>Information Systems Student & Tech Enthusiast</h1>
-        <p>Mahasiswa Sistem Informasi yang aktif berorganisasi, meneliti tren teknologi terkini, dan berpengalaman dalam berbagai kompetisi karya tulis ilmiah nasional.</p>
+        <p>Mahasiswa Sistem Informasi Institut Teknologi Del yang aktif berorganisasi, meneliti tren teknologi terkini, dan berpengalaman dalam berbagai kompetisi karya tulis ilmiah nasional.</p>
         
         <div class="hero-buttons">
           <a href="#formulir-layanan" class="btn-primary">Hire Me</a>
-          <!-- Nomor WA aktif 085122082758 -->
-          <a href="https://wa.me/6285122082758" target="_blank" rel="noopener noreferrer" class="btn-secondary">Whatsapp</a>
+          <a href="https://wa.me/6285122082758" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <i class="bi bi-whatsapp me-1"></i> Whatsapp
+          </a>
         </div>
       </div>
 
@@ -47,10 +65,10 @@
 
     <!-- Skills Banner Strip -->
     <div class="skills-banner">
-      <span>Internet of Things (IoT)</span> &bull; 
-      <span>Scientific Research</span> &bull; 
-      <span>Web Development</span> &bull; 
-      <span>Database Management</span>
+      <span><i class="bi bi-cpu me-1"></i> Internet of Things (IoT)</span> &bull; 
+      <span><i class="bi bi-journal-text me-1"></i> Scientific Research</span> &bull; 
+      <span><i class="bi bi-code-slash me-1"></i> Web Development (CSR)</span> &bull; 
+      <span><i class="bi bi-database me-1"></i> Database Management</span>
     </div>
 
     <!-- Section 2: Tabel Rekapitulasi & Rincian Beserta Galeri -->
@@ -58,7 +76,7 @@
       <h2>Rekapitulasi Prestasi & Pengalaman</h2>
       
       <table>
-        <caption>Track Record Prestasi Akademik, Karya Ilmiah, dan Kepanitiaan</caption>
+        <caption>Track Record Prestasi Akademik, Karya Ilmiah, dan Kepanitiaan (NIM: 12S24002)</caption>
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -135,7 +153,7 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="5">Total Track Record Tercatat: 9 Sertifikat / Pencapaian</td>
+            <td colspan="5">Total Track Record Tercatat: 9 Sertifikat / Pencapaian Utama</td>
           </tr>
         </tfoot>
       </table>
@@ -282,44 +300,65 @@
       </article>
     </section>
 
-    <!-- Section 3: Showcase Karya -->
+    <!-- Section 3: Dynamic Projects Showcase (Decoupled Dynamic CSR) -->
     <section id="portofolio-karya">
       <h2>Projects & Visual Showcase</h2>
-      <p>Proyek pengembangan sistem dan aplikasi web akan segera ditambahkan di bagian ini.</p>
+      <p class="text-muted mb-4">Portofolio karya dan proyek sistem yang dimuat secara asinkron dari sumber data terpisah (<code>data/projects.json</code>) menggunakan JavaScript Fetch API.</p>
+
+      <!-- Filter Kategori Tombol (Dinamis dari app.js) -->
+      <div id="projectFilterContainer"></div>
+
+      <!-- Projects Grid Shell Clean (Managed via 4 UI States in app.js) -->
+      <div id="projectsContainer"></div>
     </section>
 
-    <!-- Section 4: Formulir Layanan Interaktif -->
+    <!-- Section 4: Dynamic Services Catalog -->
+    <section id="layanan-katalog" class="bg-light py-5">
+      <div class="container-fluid px-0">
+        <h2>Katalog Paket Layanan</h2>
+        <p class="text-muted mb-4">Pilihan paket konsultasi riset, web development, dan desain basis data yang terhubung langsung dengan mock RESTful endpoint.</p>
+        
+        <!-- Services Grid Container -->
+        <div id="servicesContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Decoupled Form REST Dispatching -->
     <section id="formulir-layanan">
       <h2>Hubungi Layanan / Konsultasi</h2>
+      <p class="text-muted mb-4">Kirimkan formulir pemesanan layanan secara asinkron tanpa <em>full page reload</em>. Data pesanan akan diproses oleh REST API gateway dan tersimpan di <code>localStorage</code>.</p>
+      
       <form id="contactForm" action="javascript:void(0);">
-        
         <fieldset>
-          <legend>Informasi Data Diri</legend>
+          <legend><i class="bi bi-person-lines-fill me-2"></i>Informasi Data Diri</legend>
           
-          <label for="nama">Nama Lengkap:</label>
-          <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-
-          <label for="email">Alamat Email:</label>
-          <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-
-          <label for="telepon">Nomor Telepon / WhatsApp:</label>
-          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="nama">Nama Lengkap:</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="col-md-4">
+              <label for="email">Alamat Email:</label>
+              <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+            </div>
+            <div class="col-md-4">
+              <label for="telepon">Nomor Telepon / WhatsApp:</label>
+              <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+            </div>
+          </div>
         </fieldset>
 
         <fieldset>
-          <legend>Detail Layanan & Kebutuhan</legend>
+          <legend><i class="bi bi-gear-wide-connected me-2"></i>Detail Layanan & Kebutuhan</legend>
           
           <label for="jenis-layanan">Pilih Layanan Utama:</label>
           <select id="jenis-layanan" name="jenis-layanan" required>
-            <option value="" disabled selected>-- Pilih Layanan --</option>
-            <option value="web-dev">Web Development</option>
-            <option value="research">Konsultasi Riset & Karya Tulis</option>
-            <option value="database">Desain Basis Data</option>
+            <option value="" disabled selected>-- Memuat Opsi Layanan... --</option>
           </select>
 
           <p class="form-label-group">Kategori Proyek:</p>
           <div class="radio-group">
-            <input type="radio" id="akademik" name="kategori" value="Proyek Akademik" required>
+            <input type="radio" id="akademik" name="kategori" value="Proyek Akademik" checked required>
             <label for="akademik">Proyek Akademik</label>
             
             <input type="radio" id="organisasi" name="kategori" value="Proyek Organisasi / Umum">
@@ -329,77 +368,59 @@
           <p class="form-label-group">Opsi Tambahan:</p>
           <div class="checkbox-group">
             <input type="checkbox" id="fast-track" name="opsi" value="Layanan Prioritas">
-            <label for="fast-track">Layanan Prioritas</label>
+            <label for="fast-track">Layanan Prioritas (Fast-Track)</label>
             
             <input type="checkbox" id="responsive" name="opsi" value="Desain Mobile Responsive">
-            <label for="responsive">Desain Mobile Responsive</label>
+            <label for="responsive">Desain Mobile Responsive (CSR)</label>
           </div>
 
           <label for="pesan">Pesan / Catatan Tambahan:</label>
-          <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan detail kebutuhan Anda di sini..." required></textarea>
+          <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan detail kebutuhan proyek Anda di sini..." required></textarea>
         </fieldset>
 
-        <button type="button" onclick="kirimKeWA()" class="btn-primary">Kirim Pesan</button>
+        <button type="submit" class="btn-primary w-100 py-3 fw-bold fs-6">
+          <i class="bi bi-send-fill me-2"></i> Kirim Permintaan Asinkron (REST POST)
+        </button>
       </form>
     </section>
 
     <!-- Sidebar Informasi Tambahan -->
     <aside>
-      <h3>Status Mahasiswa</h3>
-      <p>Aktif menempuh pendidikan Sistem Informasi di Institut Teknologi Del dan terbuka untuk kolaborasi riset serta proyek pengembangan perangkat lunak.</p>
+      <h3><i class="bi bi-info-square me-2"></i>Status Mahasiswa & Arsitektur Web</h3>
+      <p>Aktif menempuh pendidikan Sistem Informasi di Institut Teknologi Del (NIM: 12S24002). Web ini diimplementasikan dengan arsitektur <strong>Decoupled Multi-Tier & Dynamic Client-Side Rendering (CSR)</strong> untuk performa optimal.</p>
     </aside>
   </main>
 
+  <!-- Universal Dynamic Modal Component (Tepat 1 Element Modal di HTML) -->
+  <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold" id="projectModalTitle"><i class="bi bi-folder2-open me-2"></i>Judul Proyek</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="projectModalBody">
+          <!-- Dynamic Content Injected via JavaScript App Controller -->
+        </div>
+        <div class="modal-footer bg-light border-0">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved.</p>
+    <p>&copy; 2026 Petra Ignatius Pengayoman Naibaho. All rights reserved. | Decoupled Multi-Tier Architecture Week 04</p>
   </footer>
 
-  <script>
-    function kirimKeWA() {
-      const nama = document.getElementById('nama').value;
-      const email = document.getElementById('email').value;
-      const telepon = document.getElementById('telepon').value;
-      const layananElement = document.getElementById('jenis-layanan');
-      const layanan = layananElement.options[layananElement.selectedIndex] ? layananElement.options[layananElement.selectedIndex].text : '-';
-      
-      const kategoriChecked = document.querySelector('input[name="kategori"]:checked');
-      const kategori = kategoriChecked ? kategoriChecked.value : '-';
-      
-      const pesan = document.getElementById('pesan').value;
+  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      if (!nama || !email || !telepon || !pesan || layananElement.value === "") {
-        alert('Mohon lengkapi semua data formulir terlebih dahulu!');
-        return;
-      }
-
-      const opsiArr = [];
-      const checkFastTrack = document.getElementById('fast-track');
-      const checkResponsive = document.getElementById('responsive');
-      if (checkFastTrack && checkFastTrack.checked) opsiArr.push(checkFastTrack.value);
-      if (checkResponsive && checkResponsive.checked) opsiArr.push(checkResponsive.value);
-      const opsi = opsiArr.length > 0 ? opsiArr.join(', ') : '-';
-
-      const text = 
-        "Halo Petra, saya ingin bertanya tentang layanan Anda.\n\n" +
-        "*Informasi Data Diri:*\n" +
-        "- Nama: " + nama + "\n" +
-        "- Email: " + email + "\n" +
-        "- Telepon: " + telepon + "\n\n" +
-        "*Detail Layanan:*\n" +
-        "- Layanan: " + layanan + "\n" +
-        "- Kategori: " + kategori + "\n" +
-        "- Opsi Tambahan: " + opsi + "\n\n" +
-        "*Pesan:* " + pesan;
-
-      const encodedText = encodeURIComponent(text);
-      
-      // Nomor WhatsApp aktif kamu
-      const myPhoneNumber = "6285122082758"; 
-
-      window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
-    }
-  </script>
+  <!-- Data Access Layer (HTTP Fetch & Error Handling) -->
+  <script src="js/api-service.js"></script>
+  <!-- Presentation Layer (DOM Control, CSR & Events) -->
+  <script src="js/app.js"></script>
 
 </body>
 </html>
